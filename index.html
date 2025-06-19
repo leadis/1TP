@@ -3,705 +3,1126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Produits AliExpress | Meilleurs Articles Tendances</title>
+    <title>L'Histoire Incroyable du Café - Une Boisson Qui a Changé le Monde | Quora</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #ff4747;
-            --primary-dark: #e63e3e;
-            --secondary: #0e0e0f;
-            --light: #f7f7f7;
-            --dark: #222325;
-            --gray: #74767e;
-            --light-gray: #efeff0;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1);
-        }
-
+        /* Reset et styles de base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
-
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: #f1f2f4;
+            color: #2b2b2b;
             line-height: 1.6;
-            overflow-x: hidden;
         }
-
-        .container {
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 10px 20px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
         }
-
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            animation: fadeIn 1s ease-out;
+        
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #b92b27;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
         }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: white;
+        
+        .logo i {
+            margin-right: 8px;
+        }
+        
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 30px;
             position: relative;
-            display: inline-block;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: titleAnimation 3s infinite alternate;
         }
-
-        @keyframes titleAnimation {
-            0% {
-                transform: translateY(0) scale(1);
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            }
-            100% {
-                transform: translateY(-5px) scale(1.02);
-                text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            }
+        
+        .search-bar input {
+            width: 100%;
+            max-width: 650px;
+            padding: 10px 20px 10px 45px;
+            border: 1px solid #e4e6e8;
+            border-radius: 20px;
+            font-size: 15px;
+            background-color: #f1f2f4;
+            transition: all 0.3s ease;
         }
-
-        h1::after {
+        
+        .search-bar input:focus {
+            background-color: #fff;
+            border-color: #b92b27;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(185, 43, 39, 0.1);
+        }
+        
+        .search-bar i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #939598;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quora-plus-btn {
+            background: linear-gradient(135deg, #b92b27, #d93934);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-right: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(185, 43, 39, 0.2);
+        }
+        
+        .quora-plus-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(185, 43, 39, 0.3);
+        }
+        
+        .quora-plus-btn i {
+            margin-right: 6px;
+            font-size: 16px;
+        }
+        
+        .login {
+            color: #636466;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        
+        .login:hover {
+            color: #b92b27;
+        }
+        
+        .signup {
+            background-color: #b92b27;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .signup:hover {
+            background-color: #d93934;
+        }
+        
+        /* Contenu principal */
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 25px auto;
+            gap: 25px;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 8px;
+        }
+        
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            color: #636466;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-menu a i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .sidebar-menu a:hover {
+            background-color: #f7f7f8;
+            color: #2b2b2b;
+        }
+        
+        .sidebar-menu .active {
+            background-color: #f8e8e8;
+            color: #b92b27;
+            font-weight: 600;
+        }
+        
+        /* Article */
+        .article-container {
+            flex-grow: 1;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            max-width: 800px;
+        }
+        
+        .article-header-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .article-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2b2b2b;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e4e6e8;
+        }
+        
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin-right: 16px;
+            object-fit: cover;
+            border: 2px solid #f1f2f4;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: #2b2b2b;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+        
+        .author-details {
+            font-size: 14px;
+            color: #939598;
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-details span {
+            margin: 0 5px;
+        }
+        
+        .premium-badge {
+            background-color: #f8e8e8;
+            color: #b92b27;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: 10px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .premium-badge i {
+            font-size: 10px;
+            margin-right: 4px;
+        }
+        
+        .article-content {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: #2b2b2b;
+        }
+        
+        .article-content p {
+            margin-bottom: 28px;
+        }
+        
+        .article-content h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 40px 0 25px;
+            color: #2b2b2b;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .article-content h2:before {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: white;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 4px;
+            background-color: #b92b27;
             border-radius: 2px;
-            animation: linePulse 2s infinite;
         }
-
-        @keyframes linePulse {
-            0% { width: 80px; opacity: 1; }
-            50% { width: 100px; opacity: 0.8; }
-            100% { width: 80px; opacity: 1; }
+        
+        .article-actions {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e4e6e8;
         }
-
-        .subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        
+        .upvote-btn {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 20px;
+            color: #636466;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+        
+        .upvote-btn:hover {
+            color: #b92b27;
+            background-color: #f8e8e8;
         }
-
-        .service-card {
+        
+        .upvote-icon {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 20px;
+            color: #636466;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            color: #b92b27;
+            background-color: #f8e8e8;
+        }
+        
+        .action-icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        /* Commentaires */
+        .comments-section {
+            margin-top: 40px;
+        }
+        
+        .comments-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #2b2b2b;
+            display: flex;
+            align-items: center;
+        }
+        
+        .comments-title span {
+            margin-left: 10px;
+            font-size: 15px;
+            color: #939598;
+            font-weight: 400;
+        }
+        
+        .comment {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e4e6e8;
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .comment-author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+            object-fit: cover;
+        }
+        
+        .comment-author-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #2b2b2b;
+        }
+        
+        .comment-author-bio {
+            font-size: 13px;
+            color: #939598;
+            margin-top: 2px;
+        }
+        
+        .comment-text {
+            margin-left: 52px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #2b2b2b;
+        }
+        
+        .comment-actions {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            margin-left: 52px;
+        }
+        
+        .comment-action {
+            color: #636466;
+            font-size: 14px;
+            margin-right: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+        
+        .comment-action:hover {
+            color: #b92b27;
+        }
+        
+        .comment-action i {
+            margin-right: 6px;
+            font-size: 16px;
+        }
+        
+        /* Sidebar droite */
+        .right-sidebar {
+            width: 320px;
+        }
+        
+        .widget {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #2b2b2b;
+            display: flex;
+            align-items: center;
+        }
+        
+        .widget-title i {
+            margin-right: 10px;
+            color: #b92b27;
+        }
+        
+        .topic-list {
+            list-style: none;
+        }
+        
+        .topic-item {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .topic-item:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #b92b27;
+        }
+        
+        .topic-link {
+            color: #2b2b2b;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+            display: block;
+            padding: 6px 0;
+        }
+        
+        .topic-link:hover {
+            color: #b92b27;
+        }
+        
+        .widget-text {
+            font-size: 15px;
+            color: #636466;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .widget-button {
+            background-color: #f1f2f4;
+            color: #2b2b2b;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
+            transition: background-color 0.2s;
+        }
+        
+        .widget-button:hover {
+            background-color: #e4e6e8;
+        }
+        
+        /* Pop-up Quora+ */
+        .quora-plus-modal {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             background: white;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            transform: translateY(0);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 25px;
+            width: 360px;
+            z-index: 1000;
+            display: none;
+            transform: translateY(20px);
             opacity: 0;
-            animation: cardEntrance 0.6s ease-out forwards;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e4e6e8;
         }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
+        
+        .quora-plus-modal.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
-
-        .service-card:hover .service-image {
-            transform: scale(1.05);
-        }
-
-        .service-image-container {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .service-category {
+        
+        .close-modal {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .service-content {
-            padding: 1.5rem;
-        }
-
-        .service-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-        }
-
-        .service-description {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .service-btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
+            background: none;
             border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #939598;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        
+        .close-modal:hover {
+            background-color: #f7f7f8;
+            color: #2b2b2b;
+        }
+        
+        .quora-plus-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .quora-plus-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #b92b27, #d93934);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .quora-plus-title {
+            font-weight: 700;
+            font-size: 20px;
+            color: #2b2b2b;
+        }
+        
+        .quora-plus-text {
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: #636466;
+            line-height: 1.6;
+        }
+        
+        .quora-plus-button {
+            background: linear-gradient(135deg, #b92b27, #d93934);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
             cursor: pointer;
             width: 100%;
-            text-align: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(185, 43, 39, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        .service-btn:hover {
-            background: var(--primary-dark);
+        
+        .quora-plus-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(185, 43, 39, 0.3);
         }
-
-        .service-btn i {
-            margin-left: 5px;
-            transition: var(--transition);
+        
+        .quora-plus-button i {
+            margin-right: 8px;
         }
-
-        .service-btn:hover i {
-            transform: translateX(3px);
+        
+        .quora-plus-features {
+            margin-top: 20px;
+            border-top: 1px solid #e4e6e8;
+            padding-top: 20px;
         }
-
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            padding: 2rem 0;
-            color: var(--gray);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--light-gray);
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        
+        .feature-item i {
+            color: #b92b27;
+            margin-right: 10px;
+            margin-top: 3px;
+            font-size: 16px;
         }
-
-        @keyframes cardEntrance {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        
+        .feature-text {
+            font-size: 14px;
+            color: #636466;
         }
-
-        /* Animation delays for cards */
-        .service-card:nth-child(1) { animation-delay: 0.01s; }
-        .service-card:nth-child(2) { animation-delay: 0.02s; }
-        .service-card:nth-child(3) { animation-delay: 0.03s; }
-        .service-card:nth-child(4) { animation-delay: 0.04s; }
-        .service-card:nth-child(5) { animation-delay: 0.05s; }
-        .service-card:nth-child(6) { animation-delay: 0.06s; }
-        .service-card:nth-child(7) { animation-delay: 0.07s; }
-        .service-card:nth-child(8) { animation-delay: 0.08s; }
-        .service-card:nth-child(9) { animation-delay: 0.09s; }
-        .service-card:nth-child(10) { animation-delay: 01.0s; }
-        .service-card:nth-child(11) { animation-delay: 01.1s; }
-        .service-card:nth-child(12) { animation-delay: 01.2s; }
-        .service-card:nth-child(13) { animation-delay: 01.3s; }
-        .service-card:nth-child(14) { animation-delay: 01.4s; }
-        .service-card:nth-child(15) { animation-delay: 01.5s; }
-        .service-card:nth-child(16) { animation-delay: 01.6s; }
-        .service-card:nth-child(17) { animation-delay: 01.7s; }
-        .service-card:nth-child(18) { animation-delay: 01.8s; }
-        .service-card:nth-child(19) { animation-delay: 01.9s; }
-        .service-card:nth-child(20) { animation-delay: 02.0s; }
-
-        /* Responsive design */
-        @media (max-width: 1200px) {
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        
+        /* Floating Quora+ Button */
+        .floating-quora-plus {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #b92b27, #d93934);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(185, 43, 39, 0.3);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
         }
-
-        @media (max-width: 900px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
+        
+        .floating-quora-plus.visible {
+            opacity: 1;
+            visibility: visible;
         }
-
-        @media (max-width: 600px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
+        
+        .floating-quora-plus:hover {
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 7px 25px rgba(185, 43, 39, 0.4);
         }
-
-        /* Floating animation for visual interest */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        
+        .floating-quora-plus i {
+            margin-right: 8px;
         }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* Animated background for header */
-        .animated-bg {
-    background: linear-gradient(-45deg, rgba(26, 159, 140, 0.7), rgba(26, 143, 159, 0.7), rgba(26, 127, 175, 0.7), rgba(26, 111, 191, 0.7));
-    background-size: 400% 400%;
-    padding: 6rem 0;
-    margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-    animation: gradientBG 15s ease infinite;
-}
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .animated-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') center/cover;
-    opacity: 0.5; /* Changé de 0.15 à 0.08 pour une image plus claire */
-    mix-blend-mode: overlay;
-}
-
-        .animated-bg-content {
+        
+        /* Premium Content Highlight */
+        .premium-content {
+            background-color: #faf6f0;
+            border-left: 4px solid #e8c281;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
             position: relative;
-            z-index: 1;
         }
-
-        /* Floating particles effect */
-        .particles {
+        
+        .premium-label {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
+            top: -12px;
+            left: -4px;
+            background-color: #e8c281;
+            color: #5a4a2a;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            align-items: center;
         }
-
-        .particle {
-    position: absolute;
-    background: rgba(173, 216, 230, 0.6); /* Bleu clair au lieu de blanc */
-    border-radius: 50%;
-    animation: floatParticle linear infinite;
-}
-
-        @keyframes floatParticle {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 1;
+        
+        .premium-label i {
+            margin-right: 5px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
             }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
+            
+            .sidebar {
+                width: 240px;
+            }
+            
+            .right-sidebar {
+                width: 280px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar, .right-sidebar {
+                width: 100%;
+                position: static;
+            }
+            
+            .article-container {
+                order: 2;
+            }
+            
+            .sidebar {
+                order: 1;
+                margin-bottom: 25px;
+            }
+            
+            .right-sidebar {
+                order: 3;
+                margin-top: 25px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .widget {
+                flex: 1 1 300px;
+                margin-bottom: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .search-bar {
+                order: 3;
+                width: 100%;
+                margin: 15px 0;
+            }
+            
+            .auth-buttons {
+                margin-left: auto;
+                margin-bottom: 15px;
+            }
+            
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .article-content {
+                font-size: 17px;
+            }
+            
+            .quora-plus-modal {
+                width: calc(100% - 40px);
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .article-container {
+                padding: 25px 20px;
+            }
+            
+            .article-title {
+                font-size: 24px;
+            }
+            
+            .article-actions {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .upvote-btn, .action-btn {
+                margin-right: 10px;
+                margin-bottom: 5px;
+            }
+            
+            .comment-text, .comment-actions {
+                margin-left: 0;
+            }
+            
+            .comment-author {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .comment-avatar {
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="animated-bg">
-        <div class="particles" id="particles"></div>
-        <div class="container animated-bg-content">
-            <header>
-                <h1>Top Produits AliExpress</h1>
-                <p class="subtitle">Découvrez les produits tendance les plus populaires à petits prix pour améliorer votre quotidien.</p>
-            </header>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo"><i class="fab fa-quora"></i>Quora</a>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Rechercher sur Quora...">
+            </div>
+            <div class="auth-buttons">
+                <a href="#" class="quora-plus-btn" id="headerQuoraPlusBtn">
+                    <i class="fas fa-crown"></i>QUORA+
+                </a>
+                <a href="#" class="login">Connexion</a>
+                <a href="#" class="signup">Inscription</a>
+            </div>
         </div>
-    </div>
-
+    </header>
+    
+    <!-- Contenu principal -->
     <div class="container">
-        <div class="services-grid">
-            <!-- Produit 1 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1232&q=80" alt="Écouteurs Bluetooth sans fil" class="service-image">
-                    <span class="service-category">Électronique</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Écouteurs Bluetooth sans fil</h3>
-                    <p class="service-description">Son stéréo, design compact, parfaits pour le sport et les déplacements. Sans fil, autonomie longue, compatible Android/iOS.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 2 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Chargeur rapide USB-C" class="service-image">
-                    <span class="service-category">Électronique</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Chargeur rapide USB-C</h3>
-                    <p class="service-description">Recharge ultra-rapide pour tous tes appareils modernes. Gain de temps, sécurité intégrée, multi-appareils.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 3 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1601784551446-66c9e1e9b189?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Support de téléphone pour voiture" class="service-image">
-                    <span class="service-category">Auto</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Support de téléphone pour voiture</h3>
-                    <p class="service-description">Stable et rotatif, parfait pour GPS et appels. Sécurité au volant, installation facile, universel.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
+        <!-- Sidebar gauche -->
+        <div class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active"><i class="fas fa-home"></i>Accueil</a></li>
+                <li><a href="#"><i class="far fa-question-circle"></i>Questions</a></li>
+                <li><a href="#"><i class="fas fa-users"></i>Espaces</a></li>
+                <li><a href="#"><i class="far fa-bell"></i>Notifications</a></li>
+                <li><a href="#"><i class="far fa-envelope"></i>Messages</a></li>
+                <li><a href="#"><i class="far fa-user"></i>Profil</a></li>
+                <li><a href="#"><i class="fas fa-plus-circle"></i>Créer un espace</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i>Paramètres</a></li>
+            </ul>
+        </div>
+        
+        <!-- Article -->
+        <div class="article-container">
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Tasse de café" class="article-header-image">
+            <h1 class="article-title">L'Histoire Incroyable du Café: Comment une Simple Baie a Changé le Monde</h1>
+            
+            <div class="author-info">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Auteur" class="author-avatar">
+                <div>
+                    <div class="author-name">Jean Dupont <span class="premium-badge"><i class="fas fa-crown"></i>PREMIUM</span></div>
+                    <div class="author-details">
+                        <span>Historien des cultures alimentaires</span>
+                        <span>•</span>
+                        <span>15 mai 2023</span>
+                        <span>•</span>
+                        <span>12 min de lecture</span>
+                    </div>
                 </div>
             </div>
-
-            <!-- Produit 4 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1584473457409-ceb3f1c9a0f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Ruban LED multicolore" class="service-image">
-                    <span class="service-category">Maison</span>
+            
+            <div class="article-content">
+                <p>Imaginez un monde sans café. Pas de cafés chauds le matin, pas de cafés entre amis, pas de culture caféière dans des dizaines de pays. Pourtant, cette boisson qui fait partie intégrante de notre quotidien a une histoire fascinante qui remonte à plusieurs siècles.</p>
+                
+                <div class="premium-content">
+                    <div class="premium-label"><i class="fas fa-crown"></i>CONTENU PREMIUM</div>
+                    <h2>La Légende de Kaldi et ses Chèvres Dansantes</h2>
+                    
+                    <p>L'histoire du café commence en Éthiopie, vers le 9ème siècle, avec une légende aussi délicieuse que le breuvage lui-même. Un berger nommé Kaldi aurait remarqué que ses chèvres devenaient étrangement énergiques après avoir mangé les baies rouges d'un certain arbuste. Intrigué, il essaya lui-même ces baies et ressentit une vitalité nouvelle.</p>
+                    
+                    <p>Kaldi apporta ces baies à un monastère local, où les moines, après avoir initialement rejeté ces "fruits du diable", découvrirent qu'une infusion de ces graines les aidait à rester éveillés pendant leurs longues heures de prière. Ainsi serait né le premier café - bien différent de celui que nous connaissons aujourd'hui.</p>
                 </div>
-                <div class="service-content">
-                    <h3 class="service-title">Ruban LED multicolore</h3>
-                    <p class="service-description">Illumine ta chambre ou ton setup gaming avec style. Télécommande, ambiance personnalisée, facile à poser.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
+                
+                <h2>L'Expansion du Café à Travers le Monde</h2>
+                
+                <p>Au 15ème siècle, le café atteint la péninsule arabique, où les méthodes de torréfaction et de préparation que nous connaissons commencent à se développer. La ville de Mocha au Yémen devient un centre névralgique du commerce du café. Les établissements servant du café, les premiers "cafés", apparaissent à La Mecque sous le nom de "qahveh khaneh".</p>
+                
+                <p>Au 17ème siècle, des voyageurs européens ramènent des histoires sur cette "boisson noire des Arabes". Le café arrive à Venise en 1615, puis à Londres en 1652, où le premier café anglais ouvre ses portes. Ces établissements deviennent rapidement des lieux de rencontre pour intellectuels, hommes d'affaires et artistes, si bien qu'on les appelle des "universités à un penny".</p>
+                
+                <div class="premium-content">
+                    <div class="premium-label"><i class="fas fa-crown"></i>CONTENU PREMIUM</div>
+                    <h2>Le Café et la Révolution</h2>
+                    
+                    <p>Saviez-vous que le café a joué un rôle dans la Révolution française ? Le Café Procope, ouvert à Paris en 1686, était fréquenté par des figures comme Voltaire, Rousseau et Diderot. C'est dans ces lieux que se forgeaient les idées des Lumières.</p>
+                    
+                    <p>De même, à Boston, le Green Dragon Tavern était surnommé le "Quartier Général de la Révolution" - c'est là que fut planifiée la Boston Tea Party. Ironiquement, c'est en partie le rejet du thé britannique (taxé) au profit du café qui marqua l'identité américaine naissante.</p>
+                </div>
+                
+                <h2>L'Impact Économique et Culturel</h2>
+                
+                <p>Aujourd'hui, le café est la deuxième marchandise la plus échangée au monde après le pétrole. Environ 2,25 milliards de tasses de café sont consommées chaque jour dans le monde. Mais au-delà des chiffres, le café a créé des rituels sociaux, des espaces de rencontre et même des styles architecturaux (pensez aux cafés viennois ou aux coffee shops modernes).</p>
+                
+                <p>La prochaine fois que vous sirotez votre espresso ou votre latte, prenez un moment pour apprécier ce voyage extraordinaire à travers les siècles et les continents - tout cela dans une simple tasse.</p>
+            </div>
+            
+            <div class="article-actions">
+                <button class="upvote-btn">
+                    <span class="upvote-icon">▲</span>
+                    <span>4.2k</span>
+                </button>
+                <button class="action-btn">
+                    <span class="action-icon"><i class="far fa-comment"></i></span>
+                    <span>32 commentaires</span>
+                </button>
+                <button class="action-btn">
+                    <span class="action-icon"><i class="fas fa-share"></i></span>
+                    <span>Partager</span>
+                </button>
+                <button class="action-btn">
+                    <span class="action-icon"><i class="far fa-bookmark"></i></span>
+                    <span>Enregistrer</span>
+                </button>
+            </div>
+            
+            <div class="comments-section">
+                <h3 class="comments-title">Commentaires <span>• 32</span></h3>
+                
+                <div class="comment">
+                    <div class="comment-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Commentateur" class="comment-avatar">
+                        <div>
+                            <div class="comment-author-name">Marie Lambert</div>
+                            <div class="comment-author-bio">Professeur d'histoire</div>
+                        </div>
+                    </div>
+                    <div class="comment-text">
+                        Excellent article ! Petite précision : le café n'a été introduit en Europe qu'après la bataille de Vienne en 1683, lorsque les Turcs en fuite ont abandonné des sacs de grains de café. Les Viennois ont ainsi découvert cette boisson et créé les premiers cafés européens.
+                    </div>
+                    <div class="comment-actions">
+                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 124</a>
+                        <a href="#" class="comment-action"><i class="far fa-comment"></i> Répondre</a>
+                        <a href="#" class="comment-action"><i class="fas fa-flag"></i> Signaler</a>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-author">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Commentateur" class="comment-avatar">
+                        <div>
+                            <div class="comment-author-name">Thomas Moreau</div>
+                            <div class="comment-author-bio">Barista professionnel</div>
+                        </div>
+                    </div>
+                    <div class="comment-text">
+                        Article très complet ! Aujourd'hui, on assiste à une troisième vague de café où l'accent est mis sur la qualité des grains, les méthodes de culture éthiques et les méthodes d'extraction artisanales. Le café est passé de simple boisson stimulante à un véritable produit gastronomique.
+                    </div>
+                    <div class="comment-actions">
+                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 89</a>
+                        <a href="#" class="comment-action"><i class="far fa-comment"></i> Répondre</a>
+                        <a href="#" class="comment-action"><i class="fas fa-flag"></i> Signaler</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Produit 5 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1600267165477-3261a9d8c421?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Brosse de nettoyage multifonction" class="service-image">
-                    <span class="service-category">Maison</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Brosse de nettoyage multifonction</h3>
-                    <p class="service-description">Brosse tout-en-un pour éviers, murs, carreaux. Poignée ergonomique, gain de temps, efficace.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
+        </div>
+        
+        <!-- Sidebar droite -->
+        <div class="right-sidebar">
+            <div class="widget">
+                <h3 class="widget-title"><i class="fas fa-book-open"></i>Articles similaires</h3>
+                <ul class="topic-list">
+                    <li class="topic-item"><a href="#" class="topic-link">L'histoire du thé: de la Chine au monde entier</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Comment le chocolat a conquis l'Europe</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Les épices qui ont changé le cours de l'histoire</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">L'impact économique des produits coloniaux</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">La révolution des boissons chaudes au 18ème siècle</a></li>
+                </ul>
             </div>
-
-            <!-- Produit 6 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1601760561441-16420502c7e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Organisateur de tiroir/cuisine" class="service-image">
-                    <span class="service-category">Cuisine</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Organisateur de tiroir/cuisine</h3>
-                    <p class="service-description">Optimise chaque centimètre de ton espace de rangement. Modulaire, esthétique, anti-bazar.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
+            
+            <div class="widget">
+                <h3 class="widget-title"><i class="fas fa-star"></i>Pourquoi utiliser Quora?</h3>
+                <p class="widget-text">Quora est le meilleur endroit pour partager des connaissances et mieux comprendre le monde. Rejoignez notre communauté pour poser des questions et obtenir des réponses de qualité.</p>
+                <button class="widget-button">En savoir plus</button>
             </div>
-
-            <!-- Produit 7 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1564510015443-605afdb7dcbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Filtre de robinet" class="service-image">
-                    <span class="service-category">Maison</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Filtre de robinet</h3>
-                    <p class="service-description">Eau plus propre et meilleure au goût. Anti-calcaire, facile à installer, économique.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
+            
+            <div class="widget">
+                <h3 class="widget-title"><i class="fas fa-users"></i>Espaces populaires</h3>
+                <ul class="topic-list">
+                    <li class="topic-item"><a href="#" class="topic-link">Histoire et culture</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Gastronomie mondiale</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Économie et commerce</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Voyages et découvertes</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Culture des boissons</a></li>
+                </ul>
             </div>
-
-            <!-- Produit 8 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1571805618149-3a9a5af7c1a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Boîte à lunch isotherme" class="service-image">
-                    <span class="service-category">Cuisine</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Boîte à lunch isotherme</h3>
-                    <p class="service-description">Garde tes repas chauds ou frais toute la journée. Design hermétique, durable, parfait pour l'école ou le travail.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 9 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80" alt="Montre connectée pas chère" class="service-image">
-                    <span class="service-category">Mode</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Montre connectée pas chère</h3>
-                    <p class="service-description">Suivi du sommeil, activité, notifications. Santé, style, batterie longue durée.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 10 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Lunettes de soleil polarisées" class="service-image">
-                    <span class="service-category">Mode</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Lunettes de soleil polarisées</h3>
-                    <p class="service-description">Protection UV avec un look tendance. Anti-reflets, confort visuel, légères.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 11 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Chaussettes invisibles/sport" class="service-image">
-                    <span class="service-category">Mode</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Chaussettes invisibles/sport</h3>
-                    <p class="service-description">Confort maximal au quotidien. Respirantes, anti-dérapantes, durables.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 12 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="T-shirts oversize/unisexes tendance" class="service-image">
-                    <span class="service-category">Mode</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">T-shirts oversize/unisexes tendance</h3>
-                    <p class="service-description">Parfaits pour un look streetwear décontracté. Coton doux, impression originale, style viral.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 13 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Bouteille à infusion d'eau" class="service-image">
-                    <span class="service-category">Bien-être</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Bouteille à infusion d'eau</h3>
-                    <p class="service-description">Infuse fruits ou herbes pour boire plus sainement. Hydratation fun, réutilisable, sans BPA.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 14 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Mini ventilateur USB portable" class="service-image">
-                    <span class="service-category">Lifestyle</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Mini ventilateur USB portable</h3>
-                    <p class="service-description">Fraîcheur immédiate partout. Léger, silencieux, idéal pour l'été.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 15 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1591348122449-02525d703f45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Pistolet de massage musculaire" class="service-image">
-                    <span class="service-category">Bien-être</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Pistolet de massage musculaire</h3>
-                    <p class="service-description">Détend tes muscles après le sport ou le travail. Plusieurs vitesses, rechargeable, soulagement rapide.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 16 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1128&q=80" alt="Masque facial en silicone réutilisable" class="service-image">
-                    <span class="service-category">Beauté</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Masque facial en silicone réutilisable</h3>
-                    <p class="service-description">Optimise tes soins beauté maison. Écologique, adaptable, effet spa.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 17 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1594782910209-ec0a9b820f9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Jouets Montessori en bois" class="service-image">
-                    <span class="service-category">Enfants</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Jouets Montessori en bois</h3>
-                    <p class="service-description">Apprentissage ludique pour les tout-petits. Sécurisés, durables, développent l'intelligence.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 18 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1130&q=80" alt="Thermomètre sans contact" class="service-image">
-                    <span class="service-category">Santé</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Thermomètre sans contact</h3>
-                    <p class="service-description">Précis et hygiénique, même pour les bébés. Lecture rapide, écran rétroéclairé, sans douleur.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 19 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Lumières LED pour vélo/trottinette" class="service-image">
-                    <span class="service-category">Sport</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Lumières LED pour vélo/trottinette</h3>
-                    <p class="service-description">Rends-toi visible et stylé de nuit. Rechargeables, étanches, sécurité renforcée.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Produit 20 -->
-            <div class="service-card floating">
-                <div class="service-image-container">
-                    <img src="https://images.unsplash.com/photo-1591360236480-4ed861025fa1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Sacoche de sport / banane imperméable" class="service-image">
-                    <span class="service-category">Sport</span>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Sacoche de sport / banane imperméable</h3>
-                    <p class="service-description">Garde ton téléphone, clés et cash en sécurité. Léger, anti-transpiration, pour running ou voyage.</p>
-                    <a href="#" class="service-btn">Voir le produit <i class="fas fa-arrow-right"></i></a>
-                </div>
+            
+            <div class="widget">
+                <h3 class="widget-title"><i class="fas fa-crown"></i>Quora+ Premium</h3>
+                <p class="widget-text">Accédez à des milliers d'articles premium comme celui-ci, sans publicité et avec des fonctionnalités exclusives.</p>
+                <button class="quora-plus-button" id="sidebarQuoraPlusBtn">
+                    <i class="fas fa-crown"></i>Essayer Quora+
+                </button>
             </div>
         </div>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>© 2023 Top Produits AliExpress. Tous droits réservés.</p>
-            <p>Découvrez les meilleurs produits à petits prix pour améliorer votre quotidien.</p>
+    
+    <!-- Pop-up Quora+ -->
+    <div class="quora-plus-modal" id="quoraPlusModal">
+        <button class="close-modal" id="closeModal">×</button>
+        <div class="quora-plus-header">
+            <div class="quora-plus-icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="quora-plus-title">Débloquez plus de contenu avec Quora+</div>
         </div>
-    </footer>
-<script>
-        // Additional animations on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.service-card');
+        <div class="quora-plus-text">
+            Vous avez lu 30% de cet article premium. Abonnez-vous à Quora+ pour accéder à l'intégralité du contenu et à des milliers d'autres articles de qualité, sans publicité.
+        </div>
+        <button class="quora-plus-button" id="quoraPlusButton">
+            <i class="fas fa-crown"></i>Essayer Quora+ gratuitement
+        </button>
+        <div class="quora-plus-features">
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <div class="feature-text">Accès illimité aux articles premium</div>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <div class="feature-text">Navigation sans publicité</div>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <div class="feature-text">Support prioritaire</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Quora+ Button -->
+    <div class="floating-quora-plus" id="floatingQuoraPlus">
+        <i class="fas fa-crown"></i> Débloquer l'article complet avec Quora+
+    </div>
+    
+    <script>
+        // Afficher la notification après 10 secondes avec une animation fluide
+        setTimeout(function() {
+            const modal = document.getElementById('quoraPlusModal');
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('visible'), 10);
             
-            // Create particles for animated background
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random size between 2px and 6px
-                const size = Math.random() * 4 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Random position
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                
-                // Random animation duration between 10s and 20s
-                const duration = Math.random() * 10 + 10;
-                particle.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-            
-            // Animate cards on scroll
-            const animateOnScroll = function() {
-                cards.forEach((card, index) => {
-                    const cardPosition = card.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-                    
-                    if (cardPosition < screenPosition) {
-                        card.style.animation = `cardEntrance 0.6s ease-out ${index * 0.1}s forwards`;
-                    }
-                });
-            };
-            
-            // Initial check
-            animateOnScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', animateOnScroll);
-            
-            // Add hover effect to all cards
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                    this.style.boxShadow = '0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05)';
-                });
+            // Afficher le bouton flottant après 20 secondes
+            setTimeout(() => {
+                const floatingBtn = document.getElementById('floatingQuoraPlus');
+                floatingBtn.classList.add('visible');
+            }, 20000);
+        }, 10000);
+        
+        // Fermer la modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            const modal = document.getElementById('quoraPlusModal');
+            modal.classList.remove('visible');
+            setTimeout(() => modal.style.display = 'none', 400);
+        });
+        
+        // Redirection vers Quora
+        const quoraButtons = [
+            document.getElementById('quoraPlusButton'),
+            document.getElementById('headerQuoraPlusBtn'),
+            document.getElementById('sidebarQuoraPlusBtn'),
+            document.getElementById('floatingQuoraPlus')
+        ];
+        
+        quoraButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                window.location.href = 'https://www.quora.com/';
             });
         });
-
-        // Add floating animation to random elements
-        function addFloatingAnimation() {
-            const elements = document.querySelectorAll('.floating');
-            elements.forEach(el => {
-                // Random delay between 0s and 2s
-                const delay = Math.random() * 2;
-                el.style.animationDelay = `${delay}s`;
-                
-                // Random duration between 4s and 8s
-                const duration = Math.random() * 4 + 4;
-                el.style.animationDuration = `${duration}s`;
-            });
-        }
-
-        // Call the function when DOM is loaded
-        document.addEventListener('DOMContentLoaded', addFloatingAnimation);
+        
+        // Fermer la modal si on clique en dehors
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('quoraPlusModal');
+            if (event.target == modal) {
+                modal.classList.remove('visible');
+                setTimeout(() => modal.style.display = 'none', 400);
+            }
+        });
+        
+        // Faire défiler la page pour voir le bouton flottant
+        window.addEventListener('scroll', function() {
+            const floatingBtn = document.getElementById('floatingQuoraPlus');
+            if (window.scrollY > 500 && !floatingBtn.classList.contains('visible')) {
+                floatingBtn.classList.add('visible');
+            }
+        });
     </script>
-    </body>
+</body>
 </html>
