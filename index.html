@@ -39,7 +39,7 @@
         }
         
         .logo {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             color: #b92b27;
             text-decoration: none;
@@ -141,6 +141,17 @@
         
         .signup:hover {
             background-color: #d93934;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #636466;
+            cursor: pointer;
+            margin-left: 15px;
         }
         
         /* Contenu principal */
@@ -255,6 +266,7 @@
             color: #939598;
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .author-details span {
@@ -315,6 +327,8 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 1px solid #e4e6e8;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .upvote-btn {
@@ -346,7 +360,6 @@
             background: none;
             border: none;
             cursor: pointer;
-            margin-right: 20px;
             color: #636466;
             font-size: 15px;
             display: flex;
@@ -437,12 +450,13 @@
             align-items: center;
             margin-top: 15px;
             margin-left: 52px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .comment-action {
             color: #636466;
             font-size: 14px;
-            margin-right: 20px;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -686,6 +700,7 @@
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
+            white-space: nowrap;
         }
         
         .floating-quora-plus.visible {
@@ -730,6 +745,47 @@
             margin-right: 5px;
         }
         
+        /* Mobile menu overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 280px;
+            background-color: white;
+            z-index: 1000;
+            padding: 20px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .close-mobile-menu {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #636466;
+            cursor: pointer;
+        }
+        
         /* Responsive */
         @media (max-width: 1200px) {
             .container {
@@ -763,6 +819,7 @@
             .sidebar {
                 order: 1;
                 margin-bottom: 25px;
+                display: none;
             }
             
             .right-sidebar {
@@ -777,6 +834,10 @@
                 flex: 1 1 300px;
                 margin-bottom: 0;
             }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
         }
         
         @media (max-width: 768px) {
@@ -786,6 +847,7 @@
             
             .logo {
                 margin-bottom: 15px;
+                font-size: 24px;
             }
             
             .search-bar {
@@ -797,6 +859,17 @@
             .auth-buttons {
                 margin-left: auto;
                 margin-bottom: 15px;
+            }
+            
+            .quora-plus-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+                margin-right: 10px;
+            }
+            
+            .login, .signup {
+                font-size: 14px;
+                padding: 8px 15px;
             }
             
             .article-title {
@@ -811,6 +884,11 @@
                 width: calc(100% - 40px);
                 right: 20px;
                 bottom: 20px;
+            }
+            
+            .floating-quora-plus {
+                padding: 10px 20px;
+                font-size: 14px;
             }
         }
         
@@ -831,6 +909,8 @@
             .upvote-btn, .action-btn {
                 margin-right: 10px;
                 margin-bottom: 5px;
+                font-size: 14px;
+                padding: 6px 10px;
             }
             
             .comment-text, .comment-actions {
@@ -845,6 +925,27 @@
             .comment-avatar {
                 margin-bottom: 10px;
             }
+            
+            .author-details span {
+                display: none;
+            }
+            
+            .author-details span:first-child,
+            .author-details span:last-child {
+                display: inline;
+            }
+            
+            .premium-content {
+                padding: 15px;
+            }
+            
+            .right-sidebar {
+                gap: 15px;
+            }
+            
+            .widget {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -852,6 +953,9 @@
     <!-- Header -->
     <header>
         <div class="navbar">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
             <a href="#" class="logo"><i class="fab fa-quora"></i>Quora</a>
             <div class="search-bar">
                 <i class="fas fa-search"></i>
@@ -867,10 +971,35 @@
         </div>
     </header>
     
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="active"><i class="fas fa-home"></i>Accueil</a></li>
+            <li><a href="#"><i class="far fa-question-circle"></i>Questions</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Espaces</a></li>
+            <li><a href="#"><i class="far fa-bell"></i>Notifications</a></li>
+            <li><a href="#"><i class="far fa-envelope"></i>Messages</a></li>
+            <li><a href="#"><i class="far fa-user"></i>Profil</a></li>
+            <li><a href="#"><i class="fas fa-plus-circle"></i>Créer un espace</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i>Paramètres</a></li>
+            <li>
+                <a href="#" class="quora-plus-btn" style="justify-content: center; margin-top: 20px;">
+                    <i class="fas fa-crown"></i>QUORA+
+                </a>
+            </li>
+        </ul>
+    </div>
+    
     <!-- Contenu principal -->
     <div class="container">
-        <!-- Sidebar gauche -->
-        <div class="sidebar">
+        <!-- Sidebar gauche (cachée sur mobile) -->
+        <div class="sidebar" id="desktopSidebar">
             <ul class="sidebar-menu">
                 <li><a href="#" class="active"><i class="fas fa-home"></i>Accueil</a></li>
                 <li><a href="#"><i class="far fa-question-circle"></i>Questions</a></li>
@@ -1122,6 +1251,39 @@
             if (window.scrollY > 500 && !floatingBtn.classList.contains('visible')) {
                 floatingBtn.classList.add('visible');
             }
+        });
+        
+        // Gestion du menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuOverlay.style.display = 'block';
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMobileMenu.addEventListener('click', function() {
+            mobileMenuOverlay.style.display = 'none';
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        mobileMenuOverlay.addEventListener('click', function() {
+            mobileMenuOverlay.style.display = 'none';
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Fermer le menu mobile lorsqu'un lien est cliqué
+        document.querySelectorAll('.mobile-menu .sidebar-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuOverlay.style.display = 'none';
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     </script>
 </body>
