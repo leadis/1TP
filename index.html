@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Histoire Incroyable du Café - Une Boisson Qui a Changé le Monde | Quora</title>
+    <title>Que pensez-vous qu'il se passe quand vous fermez les yeux pour la dernière fois sur Terre ? | Quora</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset et styles de base */
@@ -39,7 +39,7 @@
         }
         
         .logo {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             color: #b92b27;
             text-decoration: none;
@@ -141,17 +141,6 @@
         
         .signup:hover {
             background-color: #d93934;
-        }
-        
-        /* Mobile menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #636466;
-            cursor: pointer;
-            margin-left: 15px;
         }
         
         /* Contenu principal */
@@ -337,7 +326,6 @@
             background: none;
             border: none;
             cursor: pointer;
-            margin-right: 20px;
             color: #636466;
             font-size: 15px;
             font-weight: 500;
@@ -700,7 +688,6 @@
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
-            white-space: nowrap;
         }
         
         .floating-quora-plus.visible {
@@ -745,45 +732,47 @@
             margin-right: 5px;
         }
         
-        /* Mobile menu overlay */
-        .mobile-menu-overlay {
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
             position: fixed;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 999;
-            display: none;
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 280px;
-            background-color: white;
+            background-color: #fff;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 20px;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            overflow-y: auto;
+            padding: 10px 0;
         }
         
-        .mobile-menu.active {
-            transform: translateX(0);
+        .mobile-nav-items {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
         }
         
-        .close-mobile-menu {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .mobile-nav-link {
             color: #636466;
-            cursor: pointer;
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .mobile-nav-link i {
+            font-size: 20px;
+            margin-bottom: 3px;
+            display: block;
+        }
+        
+        .mobile-nav-link.active {
+            color: #b92b27;
         }
         
         /* Responsive */
@@ -819,7 +808,6 @@
             .sidebar {
                 order: 1;
                 margin-bottom: 25px;
-                display: none;
             }
             
             .right-sidebar {
@@ -834,10 +822,6 @@
                 flex: 1 1 300px;
                 margin-bottom: 0;
             }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
         }
         
         @media (max-width: 768px) {
@@ -847,7 +831,6 @@
             
             .logo {
                 margin-bottom: 15px;
-                font-size: 24px;
             }
             
             .search-bar {
@@ -859,17 +842,6 @@
             .auth-buttons {
                 margin-left: auto;
                 margin-bottom: 15px;
-            }
-            
-            .quora-plus-btn {
-                padding: 8px 15px;
-                font-size: 14px;
-                margin-right: 10px;
-            }
-            
-            .login, .signup {
-                font-size: 14px;
-                padding: 8px 15px;
             }
             
             .article-title {
@@ -886,15 +858,19 @@
                 bottom: 20px;
             }
             
-            .floating-quora-plus {
-                padding: 10px 20px;
-                font-size: 14px;
+            .mobile-nav {
+                display: block;
+            }
+            
+            .sidebar {
+                display: none;
             }
         }
         
         @media (max-width: 576px) {
             .article-container {
                 padding: 25px 20px;
+                border-radius: 0;
             }
             
             .article-title {
@@ -909,8 +885,6 @@
             .upvote-btn, .action-btn {
                 margin-right: 10px;
                 margin-bottom: 5px;
-                font-size: 14px;
-                padding: 6px 10px;
             }
             
             .comment-text, .comment-actions {
@@ -924,27 +898,33 @@
             
             .comment-avatar {
                 margin-bottom: 10px;
+                margin-right: 0;
+            }
+            
+            .author-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .author-avatar {
+                margin-bottom: 15px;
+                margin-right: 0;
             }
             
             .author-details span {
-                display: none;
+                display: block;
+                margin: 5px 0;
             }
             
-            .author-details span:first-child,
-            .author-details span:last-child {
-                display: inline;
+            .author-details span:not(:last-child):after {
+                content: none;
             }
             
-            .premium-content {
-                padding: 15px;
-            }
-            
-            .right-sidebar {
-                gap: 15px;
-            }
-            
-            .widget {
-                flex: 1 1 100%;
+            .floating-quora-plus {
+                width: 90%;
+                text-align: center;
+                padding: 12px 15px;
+                font-size: 14px;
             }
         }
     </style>
@@ -953,9 +933,6 @@
     <!-- Header -->
     <header>
         <div class="navbar">
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
             <a href="#" class="logo"><i class="fab fa-quora"></i>Quora</a>
             <div class="search-bar">
                 <i class="fas fa-search"></i>
@@ -971,35 +948,10 @@
         </div>
     </header>
     
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close-mobile-menu" id="closeMobileMenu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="sidebar-menu">
-            <li><a href="#" class="active"><i class="fas fa-home"></i>Accueil</a></li>
-            <li><a href="#"><i class="far fa-question-circle"></i>Questions</a></li>
-            <li><a href="#"><i class="fas fa-users"></i>Espaces</a></li>
-            <li><a href="#"><i class="far fa-bell"></i>Notifications</a></li>
-            <li><a href="#"><i class="far fa-envelope"></i>Messages</a></li>
-            <li><a href="#"><i class="far fa-user"></i>Profil</a></li>
-            <li><a href="#"><i class="fas fa-plus-circle"></i>Créer un espace</a></li>
-            <li><a href="#"><i class="fas fa-cog"></i>Paramètres</a></li>
-            <li>
-                <a href="#" class="quora-plus-btn" style="justify-content: center; margin-top: 20px;">
-                    <i class="fas fa-crown"></i>QUORA+
-                </a>
-            </li>
-        </ul>
-    </div>
-    
     <!-- Contenu principal -->
     <div class="container">
         <!-- Sidebar gauche (cachée sur mobile) -->
-        <div class="sidebar" id="desktopSidebar">
+        <div class="sidebar">
             <ul class="sidebar-menu">
                 <li><a href="#" class="active"><i class="fas fa-home"></i>Accueil</a></li>
                 <li><a href="#"><i class="far fa-question-circle"></i>Questions</a></li>
@@ -1014,65 +966,71 @@
         
         <!-- Article -->
         <div class="article-container">
-            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Tasse de café" class="article-header-image">
-            <h1 class="article-title">L'Histoire Incroyable du Café: Comment une Simple Baie a Changé le Monde</h1>
+            <!-- L'image sera insérée ici après le titre comme mentionné -->
+            <h1 class="article-title">Que pensez-vous qu'il se passe quand vous fermez les yeux pour la dernière fois sur Terre ? Est-ce que tout devient noir immédiatement ?</h1>
             
             <div class="author-info">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Auteur" class="author-avatar">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Auteur" class="author-avatar">
                 <div>
-                    <div class="author-name">Jean Dupont <span class="premium-badge"><i class="fas fa-crown"></i>PREMIUM</span></div>
+                    <div class="author-name">Marc Lefèvre <span class="premium-badge"><i class="fas fa-crown"></i>PREMIUM</span></div>
                     <div class="author-details">
-                        <span>Historien des cultures alimentaires</span>
+                        <span>Expérience de mort imminente</span>
                         <span>•</span>
-                        <span>15 mai 2023</span>
+                        <span>21 juin 2023</span>
                         <span>•</span>
-                        <span>12 min de lecture</span>
+                        <span>8 min de lecture</span>
                     </div>
                 </div>
             </div>
             
             <div class="article-content">
-                <p>Imaginez un monde sans café. Pas de cafés chauds le matin, pas de cafés entre amis, pas de culture caféière dans des dizaines de pays. Pourtant, cette boisson qui fait partie intégrante de notre quotidien a une histoire fascinante qui remonte à plusieurs siècles.</p>
+                <p>L'année dernière, j'ai subi une opération à cœur ouvert. Quelques jours plus tard, mon cœur s'est arrêté pendant 3 minutes et 55 secondes. Puis, je suis resté dans le coma pendant 8 jours. Je peux vous dire que même si je n'ai vu ni lumière, ni paradis, ni enfer, j'ai vu tellement de choses dont je me souviens.</p>
                 
                 <div class="premium-content">
                     <div class="premium-label"><i class="fas fa-crown"></i>CONTENU PREMIUM</div>
-                    <h2>La Légende de Kaldi et ses Chèvres Dansantes</h2>
+                    <h2>Une expérience au-delà des mots</h2>
                     
-                    <p>L'histoire du café commence en Éthiopie, vers le 9ème siècle, avec une légende aussi délicieuse que le breuvage lui-même. Un berger nommé Kaldi aurait remarqué que ses chèvres devenaient étrangement énergiques après avoir mangé les baies rouges d'un certain arbuste. Intrigué, il essaya lui-même ces baies et ressentit une vitalité nouvelle.</p>
+                    <p>Deux personnes que j'avais jamais vues de ma vie sont apparues, et nous étions très heureux de nous revoir. Nous ne parlions pas la même langue, mais nous nous comprenions parfaitement. Le genre d'amis dont on n'a pas besoin de parler pour exprimer ses émotions.</p>
                     
-                    <p>Kaldi apporta ces baies à un monastère local, où les moines, après avoir initialement rejeté ces "fruits du diable", découvrirent qu'une infusion de ces graines les aidait à rester éveillés pendant leurs longues heures de prière. Ainsi serait né le premier café - bien différent de celui que nous connaissons aujourd'hui.</p>
+                    <p>J'ai aussi senti la présence de certains chiens que j'avais eus il y a longtemps. Je ne les avais pas vus, mais je savais avec une certitude absolue qu'ils étaient là, près de moi.</p>
                 </div>
                 
-                <h2>L'Expansion du Café à Travers le Monde</h2>
+                <h2>Un monde de couleurs et d'émotions</h2>
                 
-                <p>Au 15ème siècle, le café atteint la péninsule arabique, où les méthodes de torréfaction et de préparation que nous connaissons commencent à se développer. La ville de Mocha au Yémen devient un centre névralgique du commerce du café. Les établissements servant du café, les premiers "cafés", apparaissent à La Mecque sous le nom de "qahveh khaneh".</p>
+                <p>J'ai vu tellement de choses en couleur, des visages, des paysages. Ce n'étaient pas des rêves. Tout était d'une clarté et d'une intensité extraordinaires. J'avais le choix de ne pas revenir, mais je ne pouvais pas laisser ma merveilleuse épouse seule à ce moment-là. J'ai donc décidé de revenir un peu plus longtemps.</p>
                 
-                <p>Au 17ème siècle, des voyageurs européens ramènent des histoires sur cette "boisson noire des Arabes". Le café arrive à Venise en 1615, puis à Londres en 1652, où le premier café anglais ouvre ses portes. Ces établissements deviennent rapidement des lieux de rencontre pour intellectuels, hommes d'affaires et artistes, si bien qu'on les appelle des "universités à un penny".</p>
+                <p>Maintenant, je peux vous dire que je n'ai pas peur de mourir. C'est si paisible et agréable. On se sent bien. Aucune douleur. C'est juste un bien-être profond. Je crois que nous pouvons peut-être nous réincarner. Cette expérience m'a fait me sentir bien par rapport à ce que nous avons en ce moment et m'a convaincu qu'il y a quelque chose après cette vie.</p>
                 
                 <div class="premium-content">
                     <div class="premium-label"><i class="fas fa-crown"></i>CONTENU PREMIUM</div>
-                    <h2>Le Café et la Révolution</h2>
+                    <h2>Les leçons que j'en ai tirées</h2>
                     
-                    <p>Saviez-vous que le café a joué un rôle dans la Révolution française ? Le Café Procope, ouvert à Paris en 1686, était fréquenté par des figures comme Voltaire, Rousseau et Diderot. C'est dans ces lieux que se forgeaient les idées des Lumières.</p>
+                    <p>Cette expérience a changé ma perspective sur la vie. Voici ce que j'ai appris :</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Riez autant que vous le pouvez</li>
+                        <li>Aimez autant que vous le pouvez</li>
+                        <li>Ne détestez personne - ça n'en vaut pas la peine</li>
+                        <li>Profitez des choses simples de la vie</li>
+                    </ul>
                     
-                    <p>De même, à Boston, le Green Dragon Tavern était surnommé le "Quartier Général de la Révolution" - c'est là que fut planifiée la Boston Tea Party. Ironiquement, c'est en partie le rejet du thé britannique (taxé) au profit du café qui marqua l'identité américaine naissante.</p>
+                    <p>Si vous avez un chien... ou deux, aimez-les, profitez d'eux. Ils vous attendront de l'autre côté. Soyez aussi honnête que possible, surtout envers vous-même, car vous pouvez tromper beaucoup de gens, mais vous ne pouvez pas vous tromper vous-même.</p>
                 </div>
                 
-                <h2>L'Impact Économique et Culturel</h2>
+                <h2>Un message d'espoir</h2>
                 
-                <p>Aujourd'hui, le café est la deuxième marchandise la plus échangée au monde après le pétrole. Environ 2,25 milliards de tasses de café sont consommées chaque jour dans le monde. Mais au-delà des chiffres, le café a créé des rituels sociaux, des espaces de rencontre et même des styles architecturaux (pensez aux cafés viennois ou aux coffee shops modernes).</p>
+                <p>Je partage cette expérience non pas pour convaincre qui que ce soit, mais pour offrir un témoignage d'espoir. La mort n'est pas la fin, mais une transition vers quelque chose de différent. Ce n'est pas quelque chose à craindre, mais à appréhender avec sérénité quand son heure viendra.</p>
                 
-                <p>La prochaine fois que vous sirotez votre espresso ou votre latte, prenez un moment pour apprécier ce voyage extraordinaire à travers les siècles et les continents - tout cela dans une simple tasse.</p>
+                <p>En attendant, vivez pleinement, aimez profondément, et ne perdez pas de temps avec les rancunes et les regrets. La vie est trop précieuse pour cela.</p>
             </div>
             
             <div class="article-actions">
                 <button class="upvote-btn">
                     <span class="upvote-icon">▲</span>
-                    <span>4.2k</span>
+                    <span>5.7k</span>
                 </button>
                 <button class="action-btn">
                     <span class="action-icon"><i class="far fa-comment"></i></span>
-                    <span>32 commentaires</span>
+                    <span>128 commentaires</span>
                 </button>
                 <button class="action-btn">
                     <span class="action-icon"><i class="fas fa-share"></i></span>
@@ -1085,21 +1043,21 @@
             </div>
             
             <div class="comments-section">
-                <h3 class="comments-title">Commentaires <span>• 32</span></h3>
+                <h3 class="comments-title">Commentaires <span>• 128</span></h3>
                 
                 <div class="comment">
                     <div class="comment-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Commentateur" class="comment-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Commentateur" class="comment-avatar">
                         <div>
-                            <div class="comment-author-name">Marie Lambert</div>
-                            <div class="comment-author-bio">Professeur d'histoire</div>
+                            <div class="comment-author-name">Sophie Martin</div>
+                            <div class="comment-author-bio">Psychologue clinicienne</div>
                         </div>
                     </div>
                     <div class="comment-text">
-                        Excellent article ! Petite précision : le café n'a été introduit en Europe qu'après la bataille de Vienne en 1683, lorsque les Turcs en fuite ont abandonné des sacs de grains de café. Les Viennois ont ainsi découvert cette boisson et créé les premiers cafés européens.
+                        Merci pour ce témoignage bouleversant. En tant que professionnelle, j'ai entendu de nombreux récits d'EMI (Expériences de Mort Imminente), mais le vôtre est particulièrement poignant par sa simplicité et son authenticité. Votre description des émotions et des sensations correspond à beaucoup d'autres témoignages validés par la recherche.
                     </div>
                     <div class="comment-actions">
-                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 124</a>
+                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 342</a>
                         <a href="#" class="comment-action"><i class="far fa-comment"></i> Répondre</a>
                         <a href="#" class="comment-action"><i class="fas fa-flag"></i> Signaler</a>
                     </div>
@@ -1107,17 +1065,17 @@
                 
                 <div class="comment">
                     <div class="comment-author">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Commentateur" class="comment-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Commentateur" class="comment-avatar">
                         <div>
-                            <div class="comment-author-name">Thomas Moreau</div>
-                            <div class="comment-author-bio">Barista professionnel</div>
+                            <div class="comment-author-name">Pierre Dubois</div>
+                            <div class="comment-author-bio">Médecin réanimateur</div>
                         </div>
                     </div>
                     <div class="comment-text">
-                        Article très complet ! Aujourd'hui, on assiste à une troisième vague de café où l'accent est mis sur la qualité des grains, les méthodes de culture éthiques et les méthodes d'extraction artisanales. Le café est passé de simple boisson stimulante à un véritable produit gastronomique.
+                        En tant que médecin, je confirme que les expériences comme la vôtre sont plus fréquentes qu'on ne le pense. Ce qui est fascinant, c'est la similarité des récits malgré les différences culturelles. Votre message sur l'importance d'aimer et de vivre pleinement est un précieux rappel pour nous tous.
                     </div>
                     <div class="comment-actions">
-                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 89</a>
+                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 278</a>
                         <a href="#" class="comment-action"><i class="far fa-comment"></i> Répondre</a>
                         <a href="#" class="comment-action"><i class="fas fa-flag"></i> Signaler</a>
                     </div>
@@ -1130,11 +1088,11 @@
             <div class="widget">
                 <h3 class="widget-title"><i class="fas fa-book-open"></i>Articles similaires</h3>
                 <ul class="topic-list">
-                    <li class="topic-item"><a href="#" class="topic-link">L'histoire du thé: de la Chine au monde entier</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Comment le chocolat a conquis l'Europe</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Les épices qui ont changé le cours de l'histoire</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">L'impact économique des produits coloniaux</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">La révolution des boissons chaudes au 18ème siècle</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Les preuves scientifiques des expériences de mort imminente</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Comment la méditation peut changer votre perception de la vie</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Les différents visages de l'au-delà à travers les cultures</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Le lien entre conscience et cerveau : le grand débat</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Témoignages : ces personnes revenues d'outre-tombe</a></li>
                 </ul>
             </div>
             
@@ -1147,11 +1105,11 @@
             <div class="widget">
                 <h3 class="widget-title"><i class="fas fa-users"></i>Espaces populaires</h3>
                 <ul class="topic-list">
-                    <li class="topic-item"><a href="#" class="topic-link">Histoire et culture</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Gastronomie mondiale</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Économie et commerce</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Voyages et découvertes</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Culture des boissons</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Philosophie et spiritualité</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Médecine et neurosciences</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Expériences de vie</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Psychologie humaine</a></li>
+                    <li class="topic-item"><a href="#" class="topic-link">Questions existentielles</a></li>
                 </ul>
             </div>
             
@@ -1164,6 +1122,42 @@
             </div>
         </div>
     </div>
+    
+    <!-- Navigation mobile -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-items">
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link active">
+                    <i class="fas fa-home"></i>
+                    Accueil
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    <i class="far fa-question-circle"></i>
+                    Questions
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    <i class="fas fa-users"></i>
+                    Espaces
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    <i class="far fa-bell"></i>
+                    Notifs
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    <i class="fas fa-crown"></i>
+                    Quora+
+                </a>
+            </li>
+        </ul>
+    </nav>
     
     <!-- Pop-up Quora+ -->
     <div class="quora-plus-modal" id="quoraPlusModal">
@@ -1192,6 +1186,10 @@
             <div class="feature-item">
                 <i class="fas fa-check-circle"></i>
                 <div class="feature-text">Support prioritaire</div>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <div class="feature-text">Accès anticipé aux nouvelles fonctionnalités</div>
             </div>
         </div>
     </div>
@@ -1253,36 +1251,12 @@
             }
         });
         
-        // Gestion du menu mobile
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenuOverlay.style.display = 'block';
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        closeMobileMenu.addEventListener('click', function() {
-            mobileMenuOverlay.style.display = 'none';
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        mobileMenuOverlay.addEventListener('click', function() {
-            mobileMenuOverlay.style.display = 'none';
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        // Fermer le menu mobile lorsqu'un lien est cliqué
-        document.querySelectorAll('.mobile-menu .sidebar-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenuOverlay.style.display = 'none';
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+        // Navigation mobile - basculer entre les onglets
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.mobile-nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
             });
         });
     </script>
