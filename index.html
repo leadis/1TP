@@ -3,1257 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://qsf.fs.quoracdn.net/-4-images.favicon.ico-26-e00a8d91f0ef43d3.ico" type="image/x-icon">
-    <title>Que pensez-vous qu'il se passe quand vous fermez les yeux pour la dernière fois sur Terre ? | Quora</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>C'est incroyable, non ?</title>
     <style>
-        /* Reset et styles de base */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --transition-speed: 0.3s;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         
         body {
-            background-color: #f1f2f4;
-            color: #2b2b2b;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
         }
         
-        /* Header */
-        header {
-            background-color: #fff;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 10px 20px;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: #b92b27;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 8px;
-        }
-        
-        .search-bar {
-            flex-grow: 1;
-            margin: 0 30px;
-            position: relative;
-        }
-        
-        .search-bar input {
-            width: 100%;
-            max-width: 650px;
-            padding: 10px 20px 10px 45px;
-            border: 1px solid #e4e6e8;
-            border-radius: 20px;
-            font-size: 15px;
-            background-color: #f1f2f4;
-            transition: all 0.3s ease;
-        }
-        
-        .search-bar input:focus {
-            background-color: #fff;
-            border-color: #b92b27;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(185, 43, 39, 0.1);
-        }
-        
-        .search-bar i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #939598;
-        }
-        
-        .auth-buttons {
-            display: flex;
-            align-items: center;
-        }
-        
-        .quora-plus-btn {
-            background: linear-gradient(135deg, #b92b27, #d93934);
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-right: 15px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(185, 43, 39, 0.2);
-        }
-        
-        .quora-plus-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(185, 43, 39, 0.3);
-        }
-        
-        .quora-plus-btn i {
-            margin-right: 6px;
-            font-size: 16px;
-        }
-        
-        .login {
-            color: #636466;
-            margin-right: 15px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.2s;
-        }
-        
-        .login:hover {
-            color: #b92b27;
-        }
-        
-        .signup {
-            background-color: #b92b27;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .signup:hover {
-            background-color: #d93934;
-        }
-        
-        /* Contenu principal */
         .container {
-            display: flex;
-            max-width: 1400px;
-            margin: 25px auto;
-            gap: 25px;
-        }
-        
-        .sidebar {
-            width: 280px;
-            background-color: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 80px;
-            height: fit-content;
-        }
-        
-        .sidebar-menu {
-            list-style: none;
-        }
-        
-        .sidebar-menu li {
-            margin-bottom: 8px;
-        }
-        
-        .sidebar-menu a {
-            display: flex;
-            align-items: center;
-            padding: 10px 12px;
-            color: #636466;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 15px;
-            transition: all 0.2s ease;
-        }
-        
-        .sidebar-menu a i {
-            margin-right: 12px;
-            width: 20px;
-            text-align: center;
-            font-size: 18px;
-        }
-        
-        .sidebar-menu a:hover {
-            background-color: #f7f7f8;
-            color: #2b2b2b;
-        }
-        
-        .sidebar-menu .active {
-            background-color: #f8e8e8;
-            color: #b92b27;
-            font-weight: 600;
-        }
-        
-        /* Article */
-        .article-container {
-            flex-grow: 1;
-            background-color: #fff;
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
         }
         
-        .article-header-image {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .article-title {
-            font-size: 32px;
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
             font-weight: 700;
-            color: #2b2b2b;
-            margin-bottom: 25px;
-            line-height: 1.3;
+            line-height: 1.2;
         }
         
-        .author-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e4e6e8;
+        .article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: scale(0.98);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
         }
         
-        .author-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            margin-right: 16px;
-            object-fit: cover;
-            border: 2px solid #f1f2f4;
-        }
-        
-        .author-name {
-            font-weight: 600;
-            color: #2b2b2b;
-            margin-bottom: 5px;
-            font-size: 17px;
-        }
-        
-        .author-details {
-            font-size: 14px;
-            color: #939598;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .author-details span {
-            margin: 0 5px;
-        }
-        
-        .premium-badge {
-            background-color: #f8e8e8;
-            color: #b92b27;
-            font-size: 12px;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            margin-left: 10px;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .premium-badge i {
-            font-size: 10px;
-            margin-right: 4px;
+        .article-image:hover {
+            transform: scale(1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .article-content {
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 1.1rem;
             margin-bottom: 40px;
-            color: #2b2b2b;
-        }
-        
-        .article-content p {
-            margin-bottom: 28px;
-        }
-        
-        .article-content h2 {
-            font-size: 26px;
-            font-weight: 700;
-            margin: 40px 0 25px;
-            color: #2b2b2b;
-            position: relative;
-            padding-left: 15px;
-        }
-        
-        .article-content h2:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            bottom: 5px;
-            width: 4px;
-            background-color: #b92b27;
-            border-radius: 2px;
-        }
-        
-        .article-actions {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e4e6e8;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .upvote-btn {
-            display: flex;
-            align-items: center;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #636466;
-            font-size: 15px;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-        
-        .upvote-btn:hover {
-            color: #b92b27;
-            background-color: #f8e8e8;
-        }
-        
-        .upvote-icon {
-            margin-right: 8px;
-            font-size: 20px;
-        }
-        
-        .action-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #636466;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-        
-        .action-btn:hover {
-            color: #b92b27;
-            background-color: #f8e8e8;
-        }
-        
-        .action-icon {
-            margin-right: 8px;
-            font-size: 18px;
-        }
-        
-        /* Commentaires */
-        .comments-section {
-            margin-top: 40px;
-        }
-        
-        .comments-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: #2b2b2b;
-            display: flex;
-            align-items: center;
-        }
-        
-        .comments-title span {
-            margin-left: 10px;
-            font-size: 15px;
-            color: #939598;
-            font-weight: 400;
-        }
-        
-        .comment {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e4e6e8;
-        }
-        
-        .comment:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        
-        .comment-author {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .comment-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 12px;
-            object-fit: cover;
-        }
-        
-        .comment-author-name {
-            font-weight: 600;
-            font-size: 16px;
-            color: #2b2b2b;
-        }
-        
-        .comment-author-bio {
-            font-size: 13px;
-            color: #939598;
-            margin-top: 2px;
-        }
-        
-        .comment-text {
-            margin-left: 52px;
-            font-size: 16px;
-            line-height: 1.7;
-            color: #2b2b2b;
-        }
-        
-        .comment-actions {
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-            margin-left: 52px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .comment-action {
-            color: #636466;
-            font-size: 14px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: color 0.2s;
-        }
-        
-        .comment-action:hover {
-            color: #b92b27;
-        }
-        
-        .comment-action i {
-            margin-right: 6px;
-            font-size: 16px;
-        }
-        
-        /* Sidebar droite */
-        .right-sidebar {
-            width: 320px;
-        }
-        
-        .widget {
-            background-color: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        
-        .widget-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 18px;
-            color: #2b2b2b;
-            display: flex;
-            align-items: center;
-        }
-        
-        .widget-title i {
-            margin-right: 10px;
-            color: #b92b27;
-        }
-        
-        .topic-list {
-            list-style: none;
-        }
-        
-        .topic-item {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 15px;
-        }
-        
-        .topic-item:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #b92b27;
-        }
-        
-        .topic-link {
-            color: #2b2b2b;
-            text-decoration: none;
-            font-size: 15px;
-            transition: color 0.2s;
-            display: block;
-            padding: 6px 0;
-        }
-        
-        .topic-link:hover {
-            color: #b92b27;
-        }
-        
-        .widget-text {
-            font-size: 15px;
-            color: #636466;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .widget-button {
-            background-color: #f1f2f4;
-            color: #2b2b2b;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            width: 100%;
-            font-size: 15px;
-            transition: background-color 0.2s;
-        }
-        
-        .widget-button:hover {
-            background-color: #e4e6e8;
-        }
-        
-        /* Pop-up Quora+ */
-        .quora-plus-modal {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding: 25px;
-            width: 360px;
-            z-index: 1000;
-            display: none;
-            transform: translateY(20px);
             opacity: 0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid #e4e6e8;
+            animation: fadeIn 0.6s ease-out 0.3s forwards;
         }
         
-        .quora-plus-modal.visible {
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .premium-offer {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 40px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out 0.6s forwards;
+        }
+        
+        .premium-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+        }
+        
+        .premium-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 300px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        
+        .notification.show {
             transform: translateY(0);
             opacity: 1;
         }
         
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: #939598;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .notification-badge {
+            background: linear-gradient(135deg, #f72585, #b5179e);
+            color: white;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            transition: all 0.2s;
-        }
-        
-        .close-modal:hover {
-            background-color: #f7f7f8;
-            color: #2b2b2b;
-        }
-        
-        .quora-plus-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .quora-plus-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #b92b27, #d93934);
-            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
-            color: white;
-            font-size: 24px;
-        }
-        
-        .quora-plus-title {
-            font-weight: 700;
+            flex-shrink: 0;
             font-size: 20px;
-            color: #2b2b2b;
         }
         
-        .quora-plus-text {
-            margin-bottom: 20px;
-            font-size: 15px;
-            color: #636466;
-            line-height: 1.6;
+        .notification-content {
+            flex-grow: 1;
         }
         
-        .quora-plus-button {
-            background: linear-gradient(135deg, #b92b27, #d93934);
-            color: white;
+        .notification-close {
+            background: none;
             border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 600;
+            color: #999;
+            font-size: 18px;
             cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(185, 43, 39, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .quora-plus-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(185, 43, 39, 0.3);
-        }
-        
-        .quora-plus-button i {
-            margin-right: 8px;
-        }
-        
-        .quora-plus-features {
-            margin-top: 20px;
-            border-top: 1px solid #e4e6e8;
-            padding-top: 20px;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-        
-        .feature-item i {
-            color: #b92b27;
-            margin-right: 10px;
-            margin-top: 3px;
-            font-size: 16px;
-        }
-        
-        .feature-text {
-            font-size: 14px;
-            color: #636466;
-        }
-        
-        /* Floating Quora+ Button */
-        .floating-quora-plus {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #b92b27, #d93934);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(185, 43, 39, 0.3);
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .floating-quora-plus.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .floating-quora-plus:hover {
-            transform: translateX(-50%) translateY(-2px);
-            box-shadow: 0 7px 25px rgba(185, 43, 39, 0.4);
-        }
-        
-        .floating-quora-plus i {
-            margin-right: 8px;
-        }
-        
-        /* Premium Content Highlight */
-        .premium-content {
-            background-color: #faf6f0;
-            border-left: 4px solid #e8c281;
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .premium-label {
-            position: absolute;
-            top: -12px;
-            left: -4px;
-            background-color: #e8c281;
-            color: #5a4a2a;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 3px 10px;
-            border-radius: 4px 4px 0 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .premium-label i {
-            margin-right: 5px;
-        }
-        
-        /* Mobile Navigation */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #fff;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 10px 0;
-        }
-        
-        .mobile-nav-items {
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
-        }
-        
-        .mobile-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .mobile-nav-link {
-            color: #636466;
-            text-decoration: none;
-            font-size: 12px;
-            text-align: center;
-            padding: 5px;
-        }
-        
-        .mobile-nav-link i {
-            font-size: 20px;
-            margin-bottom: 3px;
-            display: block;
-        }
-        
-        .mobile-nav-link.active {
-            color: #b92b27;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .container {
-                max-width: 100%;
-                padding: 0 20px;
-            }
-            
-            .sidebar {
-                width: 240px;
-            }
-            
-            .right-sidebar {
-                width: 280px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .container {
-                flex-direction: column;
-            }
-            
-            .sidebar, .right-sidebar {
-                width: 100%;
-                position: static;
-            }
-            
-            .article-container {
-                order: 2;
-            }
-            
-            .sidebar {
-                order: 1;
-                margin-bottom: 25px;
-            }
-            
-            .right-sidebar {
-                order: 3;
-                margin-top: 25px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-            
-            .widget {
-                flex: 1 1 300px;
-                margin-bottom: 0;
-            }
+            margin-left: 10px;
         }
         
         @media (max-width: 768px) {
-            .navbar {
-                flex-wrap: wrap;
+            .container {
+                padding: 15px;
             }
             
-            .logo {
-                margin-bottom: 15px;
+            h1 {
+                font-size: 2rem;
             }
             
-            .search-bar {
-                order: 3;
-                width: 100%;
-                margin: 15px 0;
-            }
-            
-            .auth-buttons {
-                margin-left: auto;
-                margin-bottom: 15px;
-            }
-            
-            .article-title {
-                font-size: 28px;
-            }
-            
-            .article-content {
-                font-size: 17px;
-            }
-            
-            .quora-plus-modal {
-                width: calc(100% - 40px);
-                right: 20px;
-                bottom: 20px;
-            }
-            
-            .mobile-nav {
-                display: block;
-            }
-            
-            .sidebar {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .article-container {
-                padding: 25px 20px;
-                border-radius: 0;
-            }
-            
-            .article-title {
-                font-size: 24px;
-            }
-            
-            .article-actions {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            
-            .upvote-btn, .action-btn {
-                margin-right: 10px;
-                margin-bottom: 5px;
-            }
-            
-            .comment-text, .comment-actions {
-                margin-left: 0;
-            }
-            
-            .comment-author {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .comment-avatar {
-                margin-bottom: 10px;
-                margin-right: 0;
-            }
-            
-            .author-info {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .author-avatar {
-                margin-bottom: 15px;
-                margin-right: 0;
-            }
-            
-            .author-details span {
-                display: block;
-                margin: 5px 0;
-            }
-            
-            .author-details span:not(:last-child):after {
-                content: none;
-            }
-            
-            .floating-quora-plus {
-                width: 90%;
-                text-align: center;
-                padding: 12px 15px;
-                font-size: 14px;
+            .notification {
+                max-width: calc(100% - 40px);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="navbar">
-            <a href="#" class="logo"><i class="fab fa-quora"></i>Quora</a>
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Rechercher sur Quora...">
-            </div>
-            <div class="auth-buttons">
-                <a href="#" class="quora-plus-btn" id="headerQuoraPlusBtn">
-                    <i class="fas fa-crown"></i>QUORA+
-                </a>
-                <a href="#" class="login">Connexion</a>
-                <a href="#" class="signup">Inscription</a>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Contenu principal -->
     <div class="container">
-        <!-- Sidebar gauche (cachée sur mobile) -->
-        <div class="sidebar">
-            <ul class="sidebar-menu">
-                <li><a href="#" class="active"><i class="fas fa-home"></i>Accueil</a></li>
-                <li><a href="#"><i class="far fa-question-circle"></i>Questions</a></li>
-                <li><a href="#"><i class="fas fa-users"></i>Espaces</a></li>
-                <li><a href="#"><i class="far fa-bell"></i>Notifications</a></li>
-                <li><a href="#"><i class="far fa-envelope"></i>Messages</a></li>
-                <li><a href="#"><i class="far fa-user"></i>Profil</a></li>
-                <li><a href="#"><i class="fas fa-plus-circle"></i>Créer un espace</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i>Paramètres</a></li>
-            </ul>
+        <header>
+            <h1>C'est incroyable, non ?</h1>
+            <img src="philip.jpg" alt="Image de l'article" class="article-image">
+        </header>
+        
+        <div class="article-content">
+            <p>Le Dr Amanda Hess était enceinte de 9 mois et hospitalisée pour accoucher. Elle s'apprêtait à déclencher l'accouchement en raison de complications. Alors qu'elle enfilait sa blouse d'hôpital, elle a appris qu'une autre maman, non loin de là, était en difficulté : son bébé était en détresse et devait être accouché immédiatement. Mais le médecin de cette maman n'était pas encore arrivé.</p>
+            <p>Même si le Dr Hess était sur le point d'accoucher, elle n'a pas attendu. Elle a rapidement enfilé une autre blouse pour se couvrir, enfilé de grosses bottes d'hôpital par-dessus ses tongs et est allée directement aider. Elle a accouché sans encombre du bébé de l'autre femme, puis, une heure plus tard, elle a donné naissance au sien.</p>
+            <p>Voilà un vrai super-héros</p>
         </div>
         
-        <!-- Article -->
-        <div class="article-container">
-            <h1 class="article-title">Que pensez-vous qu'il se passe quand vous fermez les yeux pour la dernière fois sur Terre ? Est-ce que tout devient noir immédiatement ?</h1>
-            
-            <img src="https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Personne regardant un coucher de soleil" class="article-header-image">
-            
-            <div class="author-info">
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Auteur" class="author-avatar">
-                <div>
-                    <div class="author-name">Marc Lefèvre</div>
-                    <div class="author-details">
-                        <span>Expérience de mort imminente</span>
-                        <span>•</span>
-                        <span>21 juin 2023</span>
-                        <span>•</span>
-                        <span>8 min de lecture</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="article-content">
-                <p>L'année dernière, j'ai subi une opération à cœur ouvert. Quelques jours plus tard, mon cœur s'est arrêté pendant 3 minutes et 55 secondes. Puis, je suis resté dans le coma pendant 8 jours. Je peux vous dire que même si je n'ai vu ni lumière, ni paradis, ni enfer, j'ai vu tellement de choses dont je me souviens.</p>
-                
-                <h2>Une expérience au-delà des mots</h2>
-                
-                <p>Deux personnes que j'avais jamais vues de ma vie sont apparues, et nous étions très heureux de nous revoir. Nous ne parlions pas la même langue, mais nous nous comprenions parfaitement. Le genre d'amis dont on n'a pas besoin de parler pour exprimer ses émotions.</p>
-                
-                <p>J'ai aussi senti la présence de certains chiens que j'avais eus il y a longtemps. Je ne les avais pas vus, mais je savais avec une certitude absolue qu'ils étaient là, près de moi.</p>
-                
-                <h2>Un monde de couleurs et d'émotions</h2>
-                
-                <p>J'ai vu tellement de choses en couleur, des visages, des paysages. Ce n'étaient pas des rêves. Tout était d'une clarté et d'une intensité extraordinaires. J'avais le choix de ne pas revenir, mais je ne pouvais pas laisser ma merveilleuse épouse seule à ce moment-là. J'ai donc décidé de revenir un peu plus longtemps.</p>
-                
-                <p>Maintenant, je peux vous dire que je n'ai pas peur de mourir. C'est si paisible et agréable. On se sent bien. Aucune douleur. C'est juste un bien-être profond. Je crois que nous pouvons peut-être nous réincarner. Cette expérience m'a fait me sentir bien par rapport à ce que nous avons en ce moment et m'a convaincu qu'il y a quelque chose après cette vie.</p>
-                
-                <h2>Les leçons que j'en ai tirées</h2>
-                
-                <p>Cette expérience a changé ma perspective sur la vie. Voici ce que j'ai appris :</p>
-                <ul style="margin-left: 20px; margin-bottom: 20px;">
-                    <li>Riez autant que vous le pouvez</li>
-                    <li>Aimez autant que vous le pouvez</li>
-                    <li>Ne détestez personne - ça n'en vaut pas la peine</li>
-                    <li>Profitez des choses simples de la vie</li>
-                </ul>
-                
-                <p>Si vous avez un chien... ou deux, aimez-les, profitez d'eux. Ils vous attendront de l'autre côté. Soyez aussi honnête que possible, surtout envers vous-même, car vous pouvez tromper beaucoup de gens, mais vous ne pouvez pas vous tromper vous-même.</p>
-                
-                <h2>Un message d'espoir</h2>
-                
-                <p>Je partage cette expérience non pas pour convaincre qui que ce soit, mais pour offrir un témoignage d'espoir. La mort n'est pas la fin, mais une transition vers quelque chose de différent. Ce n'est pas quelque chose à craindre, mais à appréhender avec sérénité quand son heure viendra.</p>
-                
-                <p>En attendant, vivez pleinement, aimez profondément, et ne perdez pas de temps avec les rancunes et les regrets. La vie est trop précieuse pour cela.</p>
-            </div>
-            
-            <div class="article-actions">
-                <button class="upvote-btn">
-                    <span class="upvote-icon">▲</span>
-                    <span>5.7k</span>
-                </button>
-                <button class="action-btn">
-                    <span class="action-icon"><i class="far fa-comment"></i></span>
-                    <span>128 commentaires</span>
-                </button>
-                <button class="action-btn">
-                    <span class="action-icon"><i class="fas fa-share"></i></span>
-                    <span>Partager</span>
-                </button>
-                <button class="action-btn">
-                    <span class="action-icon"><i class="far fa-bookmark"></i></span>
-                    <span>Enregistrer</span>
-                </button>
-            </div>
-            
-            <div class="comments-section">
-                <h3 class="comments-title">Commentaires <span>• 128</span></h3>
-                
-                <div class="comment">
-                    <div class="comment-author">
-                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Commentateur" class="comment-avatar">
-                        <div>
-                            <div class="comment-author-name">Sophie Martin</div>
-                            <div class="comment-author-bio">Psychologue clinicienne</div>
-                        </div>
-                    </div>
-                    <div class="comment-text">
-                        Merci pour ce témoignage bouleversant. En tant que professionnelle, j'ai entendu de nombreux récits d'EMI (Expériences de Mort Imminente), mais le vôtre est particulièrement poignant par sa simplicité et son authenticité. Votre description des émotions et des sensations correspond à beaucoup d'autres témoignages validés par la recherche.
-                    </div>
-                    <div class="comment-actions">
-                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 342</a>
-                        <a href="#" class="comment-action"><i class="far fa-comment"></i> Répondre</a>
-                        <a href="#" class="comment-action"><i class="fas fa-flag"></i> Signaler</a>
-                    </div>
-                </div>
-                
-                <div class="comment">
-                    <div class="comment-author">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Commentateur" class="comment-avatar">
-                        <div>
-                            <div class="comment-author-name">Pierre Dubois</div>
-                            <div class="comment-author-bio">Médecin réanimateur</div>
-                        </div>
-                    </div>
-                    <div class="comment-text">
-                        En tant que médecin, je confirme que les expériences comme la vôtre sont plus fréquentes qu'on ne le pense. Ce qui est fascinant, c'est la similarité des récits malgré les différences culturelles. Votre message sur l'importance d'aimer et de vivre pleinement est un précieux rappel pour nous tous.
-                    </div>
-                    <div class="comment-actions">
-                        <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 278</a>
-                        <a href="#" class="comment-action"><i class="far fa-comment"></i> Répondre</a>
-                        <a href="#" class="comment-action"><i class="fas fa-flag"></i> Signaler</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Sidebar droite -->
-        <div class="right-sidebar">
-            <div class="widget">
-                <h3 class="widget-title"><i class="fas fa-book-open"></i>Articles similaires</h3>
-                <ul class="topic-list">
-                    <li class="topic-item"><a href="#" class="topic-link">Les preuves scientifiques des expériences de mort imminente</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Comment la méditation peut changer votre perception de la vie</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Les différents visages de l'au-delà à travers les cultures</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Le lien entre conscience et cerveau : le grand débat</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Témoignages : ces personnes revenues d'outre-tombe</a></li>
-                </ul>
-            </div>
-            
-            <div class="widget">
-                <h3 class="widget-title"><i class="fas fa-star"></i>Pourquoi utiliser Quora?</h3>
-                <p class="widget-text">Quora est le meilleur endroit pour partager des connaissances et mieux comprendre le monde. Rejoignez notre communauté pour poser des questions et obtenir des réponses de qualité.</p>
-                <button class="widget-button">En savoir plus</button>
-            </div>
-            
-            <div class="widget">
-                <h3 class="widget-title"><i class="fas fa-users"></i>Espaces populaires</h3>
-                <ul class="topic-list">
-                    <li class="topic-item"><a href="#" class="topic-link">Philosophie et spiritualité</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Médecine et neurosciences</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Expériences de vie</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Psychologie humaine</a></li>
-                    <li class="topic-item"><a href="#" class="topic-link">Questions existentielles</a></li>
-                </ul>
-            </div>
-            
-            <div class="widget">
-                <h3 class="widget-title"><i class="fas fa-crown"></i>Quora+ Premium</h3>
-                <p class="widget-text">Accédez à des milliers d'articles premium comme celui-ci, sans publicité et avec des fonctionnalités exclusives.</p>
-                <button class="quora-plus-button" id="sidebarQuoraPlusBtn">
-                    <i class="fas fa-crown"></i>Essayer Quora+
-                </button>
-            </div>
+        <div class="premium-offer">
+            <h3>Accédez à des milliers d'articles premium gratuitement</h3>
+            <p>Terminez une simple offre de 30 secondes pour débloquer tout notre contenu exclusif</p>
+            <button class="premium-btn">Terminer l'offre et accéder gratuitement</button>
         </div>
     </div>
     
-    <!-- Navigation mobile -->
-    <nav class="mobile-nav">
-        <ul class="mobile-nav-items">
-            <li class="mobile-nav-item">
-                <a href="#" class="mobile-nav-link active">
-                    <i class="fas fa-home"></i>
-                    Accueil
-                </a>
-            </li>
-            <li class="mobile-nav-item">
-                <a href="#" class="mobile-nav-link">
-                    <i class="far fa-question-circle"></i>
-                    Questions
-                </a>
-            </li>
-            <li class="mobile-nav-item">
-                <a href="#" class="mobile-nav-link">
-                    <i class="fas fa-users"></i>
-                    Espaces
-                </a>
-            </li>
-            <li class="mobile-nav-item">
-                <a href="#" class="mobile-nav-link">
-                    <i class="far fa-bell"></i>
-                    Notifs
-                </a>
-            </li>
-            <li class="mobile-nav-item">
-                <a href="#" class="mobile-nav-link">
-                    <i class="fas fa-crown"></i>
-                    Quora+
-                </a>
-            </li>
-        </ul>
-    </nav>
-    
-    <!-- Pop-up Quora+ -->
-    <div class="quora-plus-modal" id="quoraPlusModal">
-        <button class="close-modal" id="closeModal">×</button>
-        <div class="quora-plus-header">
-            <div class="quora-plus-icon">
-                <i class="fas fa-crown"></i>
-            </div>
-            <div class="quora-plus-title">Débloquez plus de contenu avec Quora+</div>
+    <div class="notification">
+        <div class="notification-badge">🎁</div>
+        <div class="notification-content">
+            <strong>Offre spéciale !</strong>
+            <p>Terminez une offre et accédez à notre contenu premium gratuitement</p>
         </div>
-        <div class="quora-plus-text">
-            Vous avez lu 30% de cet article premium. Abonnez-vous à Quora+ pour accéder à l'intégralité du contenu et à des milliers d'autres articles de qualité, sans publicité.
-        </div>
-        <button class="quora-plus-button" id="quoraPlusButton">
-            <i class="fas fa-crown"></i>Essayer Quora+ gratuitement
-        </button>
-        <div class="quora-plus-features">
-            <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="feature-text">Accès illimité aux articles premium</div>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="feature-text">Navigation sans publicité</div>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="feature-text">Support prioritaire</div>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="feature-text">Accès anticipé aux nouvelles fonctionnalités</div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Floating Quora+ Button -->
-    <div class="floating-quora-plus" id="floatingQuoraPlus">
-        <i class="fas fa-crown"></i> Débloquer l'article complet avec Quora+
+        <button class="notification-close">&times;</button>
     </div>
     
     <script>
-        // Afficher la notification après 10 secondes avec une animation fluide
-        setTimeout(function() {
-            const modal = document.getElementById('quoraPlusModal');
-            modal.style.display = 'block';
-            setTimeout(() => modal.classList.add('visible'), 10);
-            
-            // Afficher le bouton flottant après 20 secondes
-            setTimeout(() => {
-                const floatingBtn = document.getElementById('floatingQuoraPlus');
-                floatingBtn.classList.add('visible');
-            }, 20000);
-        }, 10000);
+        // Afficher la notification après 5 secondes
+        setTimeout(() => {
+            document.querySelector('.notification').classList.add('show');
+        }, 5000);
         
-        // Fermer la modal
-        document.getElementById('closeModal').addEventListener('click', function() {
-            const modal = document.getElementById('quoraPlusModal');
-            modal.classList.remove('visible');
-            setTimeout(() => modal.style.display = 'none', 400);
+        // Fermer la notification
+        document.querySelector('.notification-close').addEventListener('click', () => {
+            document.querySelector('.notification').classList.remove('show');
         });
         
-        // Redirection vers Quora
-        const quoraButtons = [
-            document.getElementById('quoraPlusButton'),
-            document.getElementById('headerQuoraPlusBtn'),
-            document.getElementById('sidebarQuoraPlusBtn'),
-            document.getElementById('floatingQuoraPlus')
-        ];
-        
-        quoraButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                window.location.href = 'https://www.quora.com/';
-            });
-        });
-        
-        // Fermer la modal si on clique en dehors
-        window.addEventListener('click', function(event) {
-            const modal = document.getElementById('quoraPlusModal');
-            if (event.target == modal) {
-                modal.classList.remove('visible');
-                setTimeout(() => modal.style.display = 'none', 400);
-            }
-        });
-        
-        // Faire défiler la page pour voir le bouton flottant
-        window.addEventListener('scroll', function() {
-            const floatingBtn = document.getElementById('floatingQuoraPlus');
-            if (window.scrollY > 500 && !floatingBtn.classList.contains('visible')) {
-                floatingBtn.classList.add('visible');
-            }
-        });
-        
-        // Navigation mobile - basculer entre les onglets
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.mobile-nav-link').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            });
+        // Animation au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Les animations sont gérées par CSS
         });
     </script>
 </body>
