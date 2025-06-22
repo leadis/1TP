@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C'est incroyable, non ?</title>
+    <meta name="description" content="Découvrez cette histoire incroyable et accédez à du contenu premium gratuitement">
+    <title>C'est incroyable, non ? | Accès Premium Gratuit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #4361ee;
+            --primary-light: #4cc9f0;
             --secondary-color: #3a0ca3;
-            --text-color: #333;
+            --accent-color: #f72585;
+            --text-color: #2b2d42;
             --light-bg: #f8f9fa;
-            --transition-speed: 0.3s;
+            --white: #ffffff;
+            --transition-speed: 0.4s;
+            --cubic-bezier: cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         * {
@@ -20,13 +28,14 @@
         }
         
         body {
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
             color: var(--text-color);
             background-color: var(--light-bg);
             padding: 0;
             margin: 0;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         
         .container {
@@ -35,7 +44,7 @@
             padding: 20px;
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUp 0.8s var(--cubic-bezier) forwards;
         }
         
         @keyframes fadeInUp {
@@ -48,36 +57,67 @@
         header {
             text-align: center;
             margin-bottom: 40px;
+            position: relative;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
-            color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-weight: 700;
             line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .article-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: scale(0.98);
+            transition: transform var(--transition-speed) var(--cubic-bezier), box-shadow var(--transition-speed) var(--cubic-bezier);
         }
         
         .article-image {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transform: scale(0.98);
-            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            display: block;
+            transition: transform 1.2s var(--cubic-bezier);
         }
         
-        .article-image:hover {
+        .article-image-container:hover {
             transform: scale(1);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .article-image-container:hover .article-image {
+            transform: scale(1.05);
         }
         
         .article-content {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 40px;
             opacity: 0;
-            animation: fadeIn 0.6s ease-out 0.3s forwards;
+            animation: fadeIn 0.8s var(--cubic-bezier) 0.4s forwards;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5em;
+            text-align: justify;
         }
         
         @keyframes fadeIn {
@@ -88,83 +128,255 @@
         
         .premium-offer {
             text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin: 40px 0;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 60px 0;
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeInUp 0.6s ease-out 0.6s forwards;
+            animation: fadeInUp 0.8s var(--cubic-bezier) 0.8s forwards;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .premium-offer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light), var(--accent-color));
+        }
+        
+        .premium-offer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .premium-offer p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #495057;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .premium-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 12px 30px;
+            padding: 16px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 20px;
+            margin-top: 15px;
             border: none;
             cursor: pointer;
-            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+            transition: all var(--transition-speed) var(--cubic-bezier);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .premium-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity var(--transition-speed) var(--cubic-bezier);
         }
         
         .premium-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+            box-shadow: 0 12px 25px rgba(67, 97, 238, 0.5);
         }
         
+        .premium-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .premium-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(67, 97, 238, 0.4);
+        }
+        
+        .premium-btn .icon {
+            margin-left: 10px;
+            transition: transform 0.3s var(--cubic-bezier);
+        }
+        
+        .premium-btn:hover .icon {
+            transform: translateX(5px);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+        
+        /* Notification améliorée */
         .notification {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 20px;
-            max-width: 300px;
-            transform: translateY(100px);
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            padding: 0;
+            max-width: 350px;
+            transform: translateY(100px) scale(0.9);
             opacity: 0;
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
             z-index: 1000;
             display: flex;
             align-items: center;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
         }
         
         .notification.show {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
             opacity: 1;
         }
         
         .notification-badge {
-            background: linear-gradient(135deg, #f72585, #b5179e);
+            background: linear-gradient(135deg, var(--accent-color), #b5179e);
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+            width: 50px;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
             flex-shrink: 0;
-            font-size: 20px;
+            font-size: 24px;
         }
         
         .notification-content {
             flex-grow: 1;
+            padding: 20px;
+        }
+        
+        .notification-content strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .notification-content p {
+            font-size: 0.95rem;
+            color: #495057;
+            line-height: 1.5;
         }
         
         .notification-close {
             background: none;
             border: none;
-            color: #999;
-            font-size: 18px;
+            color: #adb5bd;
+            font-size: 22px;
             cursor: pointer;
-            margin-left: 10px;
+            padding: 10px;
+            transition: color 0.2s ease;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        
+        .notification-close:hover {
+            color: var(--accent-color);
+        }
+        
+        .notification-timer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            width: 100%;
+            transform-origin: left;
+            transform: scaleX(1);
+            transition: transform 5s linear;
+        }
+        
+        .notification.show .notification-timer {
+            transform: scaleX(0);
+        }
+        
+        /* Floating action button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-color), #b5179e);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(247, 37, 133, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            transform: scale(0.5) translateY(50px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+        }
+        
+        .fab.show {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        
+        .fab:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(247, 37, 133, 0.5);
+        }
+        
+        .fab:active {
+            transform: scale(0.95);
+        }
+        
+        /* Animation de confettis */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            opacity: 0;
+            z-index: 1002;
+            animation: confetti-fall 5s ease-in-out forwards;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
         }
         
         @media (max-width: 768px) {
@@ -173,20 +385,47 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .premium-offer {
+                padding: 30px 20px;
+                margin: 40px 0;
+            }
+            
+            .premium-offer p {
+                max-width: 100%;
             }
             
             .notification {
                 max-width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+            
+            .fab {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="progress-bar"></div>
+    
     <div class="container">
         <header>
+            <div class="article-meta">
+                <span>Inspiration</span>
+                <span>•</span>
+                <span>3 min de lecture</span>
+            </div>
             <h1>C'est incroyable, non ?</h1>
-            <img src="philippe.jpeg" alt="Image de l'article" class="article-image">
+            <div class="article-image-container">
+                <img src="philippe.jpeg" alt="Image de l'article" class="article-image">
+            </div>
         </header>
         
         <div class="article-content">
@@ -198,33 +437,131 @@
         <div class="premium-offer">
             <h3>Accédez à des milliers d'articles premium gratuitement</h3>
             <p>Terminez une simple offre de 30 secondes pour débloquer tout notre contenu exclusif</p>
-            <button class="premium-btn">Terminer l'offre et accéder gratuitement</button>
+            <button class="premium-btn">
+                Terminer l'offre et accéder gratuitement
+                <span class="icon">→</span>
+            </button>
         </div>
+    </div>
+    
+    <div class="fab" title="Accéder à l'offre">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
     </div>
     
     <div class="notification">
         <div class="notification-badge">🎁</div>
         <div class="notification-content">
-            <strong>Offre spéciale !</strong>
-            <p>Terminez une offre et accédez à notre contenu premium gratuitement</p>
+            <strong>Offre spéciale limitée !</strong>
+            <p>97 personnes ont déjà profité de cette offre aujourd'hui. Terminez maintenant pour accéder à notre contenu premium gratuitement.</p>
         </div>
         <button class="notification-close">&times;</button>
+        <div class="notification-timer"></div>
     </div>
     
     <script>
-        // Afficher la notification après 5 secondes
+        // Barre de progression lors du défilement
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollProgress = (scrollTop / scrollHeight) * 100;
+            document.querySelector('.progress-bar').style.width = scrollProgress + '%';
+        });
+        
+        // Afficher la notification après 3 secondes
         setTimeout(() => {
             document.querySelector('.notification').classList.add('show');
-        }, 5000);
+            
+            // Fermer automatiquement après 8 secondes
+            setTimeout(() => {
+                if (document.querySelector('.notification.show')) {
+                    document.querySelector('.notification').classList.remove('show');
+                }
+            }, 8000);
+        }, 3000);
+        
+        // Afficher le FAB après défilement de 25%
+        window.addEventListener('scroll', function() {
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercentage > 25 && !document.querySelector('.fab').classList.contains('show')) {
+                document.querySelector('.fab').classList.add('show');
+            }
+        });
         
         // Fermer la notification
         document.querySelector('.notification-close').addEventListener('click', () => {
             document.querySelector('.notification').classList.remove('show');
         });
         
+        // Clic sur le FAB
+        document.querySelector('.fab').addEventListener('click', function() {
+            // Scroll vers l'offre premium
+            document.querySelector('.premium-offer').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Petite animation de vibration
+            this.classList.add('vibrate');
+            setTimeout(() => {
+                this.classList.remove('vibrate');
+            }, 500);
+        });
+        
+        // Animation du bouton premium
+        const premiumBtn = document.querySelector('.premium-btn');
+        premiumBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Animation de confettis
+            for (let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+            
+            // Redirection (simulée)
+            setTimeout(() => {
+                // window.location.href = "https://votre-lien-de-conversion.com";
+                alert("Redirection vers la page de conversion!");
+            }, 1500);
+        });
+        
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            
+            // Position aléatoire
+            const xPos = Math.random() * window.innerWidth;
+            
+            // Couleurs aléatoires
+            const colors = ['#4361ee', '#3a0ca3', '#f72585', '#4cc9f0', '#7209b7'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Taille aléatoire
+            const size = Math.random() * 10 + 5;
+            
+            // Animation duration
+            const duration = Math.random() * 3 + 2;
+            
+            confetti.style.left = `${xPos}px`;
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            confetti.style.backgroundColor = randomColor;
+            confetti.style.animationDuration = `${duration}s`;
+            
+            document.body.appendChild(confetti);
+            
+            // Supprimer après l'animation
+            setTimeout(() => {
+                confetti.remove();
+            }, duration * 1000);
+        }
+        
         // Animation au chargement de la page
         document.addEventListener('DOMContentLoaded', () => {
-            // Les animations sont gérées par CSS
+            // Précharger les polices pour éviter le FOIT (Flash of Invisible Text)
+            document.fonts.ready.then(() => {
+                // Les animations CSS sont déjà configurées
+            });
         });
     </script>
 </body>
